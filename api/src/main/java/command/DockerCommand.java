@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 
 public class DockerCommand {
 
-    public static void RunCloseStdMapReduce(String input, String output) {
+    public static void RunMapReduce(String type, String input, String output) {
         ProcessBuilder builder = new ProcessBuilder();
         builder.command(
                 "docker", "exec", "namenode", "hadoop",
-                "jar", "/opt/job/job-1.0-SNAPSHOT.jar", "CloseStdMapReduce", input, output);
+                "jar", "/opt/job/job-1.0-SNAPSHOT.jar", type, input, output);
 
         try {
 
